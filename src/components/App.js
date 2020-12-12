@@ -16,11 +16,14 @@ function App() {
         <Route path="/courses" component={CoursesPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/course/:slug" component={ManageCoursePage} />
+        <Route path="/course" component={ManageCoursePage} />
         <Redirect from="/about-page" to="about" />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
   );
 }
+// ordering of the Routes matter,
+// place more specific route first (e.g. /course/:slug) on top of less specific routes (e.g. /course)
 
 export default App;
