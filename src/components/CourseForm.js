@@ -2,9 +2,11 @@ import React from "react";
 import TextInput from "./common/TextInput";
 
 // TODO: generic SelectInput component
+// note that onSubmit handler better on form tag instead of save button because
+// its more accessible (in addition to save button user can use enter key to submit)
 function CourseForm(props) {
   return (
-    <form>
+    <form onSubmit={props.onSubmit}>
       <TextInput
         id="title"
         label="Title"
