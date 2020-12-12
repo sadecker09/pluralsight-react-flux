@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+// TODO display author name instead of id
 function CourseList(props) {
   return (
     <table className="table">
