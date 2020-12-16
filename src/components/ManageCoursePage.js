@@ -4,6 +4,9 @@ import courseStore from "../stores/courseStore";
 import { toast } from "react-toastify";
 import * as courseActions from "../actions/courseActions";
 
+// todo populate author dropdown via api data
+// todo add a manage authors page
+
 function ManageCoursePage(props) {
   const [errors, setErrors] = useState({});
   const [courses, setCourses] = useState(courseStore.getCourses());
