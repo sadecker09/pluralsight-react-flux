@@ -10,7 +10,7 @@ export function saveCourse(course) {
     // this registers the action w/ the dispatcher
     // ("go tell all the stores that a course was just updated")
     dispatcher.dispatch({
-      // this is the action (payload)
+      // this is the action (payload) to send to the subscribing stores
       actionType: actionTypes.CREATE_COURSE,
       course: savedCourse,
     });
