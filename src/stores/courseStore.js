@@ -46,6 +46,12 @@ Dispatcher.register((action) => {
       _courses = action.courses;
       store.emitChange();
       break;
+    case actionTypes.UPDATE_COURSE:
+      _courses = _courses.map((course) =>
+        course.id === action.course.id ? action.course : course
+      );
+      store.emitChange();
+      break;
     default:
     // nothing to do
     // remember that every store's dispatcher receives every action

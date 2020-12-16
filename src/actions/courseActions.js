@@ -11,7 +11,9 @@ export function saveCourse(course) {
     // ("go tell all the stores that a course was just updated")
     dispatcher.dispatch({
       // this is the action (payload) to send to the subscribing stores
-      actionType: actionTypes.CREATE_COURSE,
+      actionType: course.id
+        ? actionTypes.UPDATE_COURSE
+        : actionTypes.CREATE_COURSE,
       course: savedCourse,
     });
   });
