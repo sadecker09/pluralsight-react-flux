@@ -22,11 +22,11 @@ class CourseStore extends EventEmitter {
 
   // define some handy functions that return data from the Flux store
   getCourses() {
-      return _courses;
+    return _courses;
   }
 
   getCourseBySlug(slug) {
-    return _courses.find(course => course.slug === slug);
+    return _courses.find((course) => course.slug === slug);
   }
 }
 
@@ -40,6 +40,10 @@ Dispatcher.register((action) => {
       _courses.push(action.course);
       // Important! Anytime store changes, need to call emitChange
       // which will notify subscribed React components to update UI accordingly
+      store.emitChange();
+      break;
+    case actionTypes.LOAD_COURSES:
+      _courses = action.courses;
       store.emitChange();
       break;
     default:
